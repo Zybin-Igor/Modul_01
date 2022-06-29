@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="html, css, javascript, react"/>
+    <meta name="description" content="J'apprends le développement frontend"/>
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: lightcoral;
+        transition: all 0.25s;
+      }
+      div {
+        text-align: center;
+      }
+      button {
+        border: 1px solid black;
+        padding: 15px 20px;
+        border-radius: 20px;
+        background: transparent;
+        cursor: pointer;
+        outline: none;
+      }
+      h1,
+      h3,
+      h2 {
+        animation: down 1s;
+      }
+      @keyframes down {
+        from {
+          transform: translateY(-50px);
+        }
+
+        to {
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h3>Hello PASHA and ARTEM!</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Modi fugiat alias, unde maxime voluptate aliquam. Magni eum illum recusandae esse?</p>
+      <h2>Are you ready?</h2>
+      <h1>17:52:52</h1>
+      <button>changement de fon</button>
+    </div>
+    <script>
+      const name = prompt('What you name?');
+      document.querySelector('h3').textContent = 'Hello ' + name;
+      document.querySelector('h1').textContent = 'Now ' + new Date().toLocaleTimeString();
+      setInterval(function () {
+        document.querySelector('h1').textContent = 'Now ' + new Date().toLocaleTimeString();
+      }, 1000);
+
+      const colors = ['indigo', 'green', 'darkred', 'Cyan', 'Coral', 'Fuchsia'];
+      let index = 0;
+      document.querySelector('button').onclick = function () {
+        document.body.style.background = colors[index];
+        index++;
+        if (index >= colors.length) index = 0;
+      };
+    </script>
+  </body>
+</html>
